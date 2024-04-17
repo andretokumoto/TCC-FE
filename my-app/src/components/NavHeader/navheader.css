@@ -1,0 +1,24 @@
+.top-menu {
+    background-color: #0c5204;
+    color: white;
+    padding: 10px;
+  }
+
+.appBar {
+    background-color: #e40b0b;
+  }
+  
+  .menu-title {
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .menuButton {
+    color: #fff; 
+  }
+
+  
+  .menuItem {
+    color: #333;
+  }
