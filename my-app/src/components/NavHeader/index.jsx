@@ -7,6 +7,9 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import './navheader.css'; // Importe o arquivo CSS externo
 
+
+const opcoes_Inserir = ['Imagem','Tabela']
+
 function TopMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -19,32 +22,99 @@ function TopMenu() {
   };
 
   return (
-    <AppBar position="static" className="top-menu">
+    <AppBar position="static" className="MuiAppBar-root top-menu"> 
       <Toolbar>
-        <Typography variant="h6" component="div" className="menu-title"> 
-          Formataí - gerador de pdf formatado
+        <Typography variant="h5" className="MuiTypography-root menu-title"> 
+          Formataí - gerador de pdf formatado 
         </Typography>
-        <div>
+
+        {/* Botao Novo */}
+        <div style={{ position: 'absolute', left: 20 }}>
           <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
+            className='menuButton'
+            aria-controls="simple-menu"
+            aria-haspopup="true"
             onClick={handleClick}
+            color="inherit"
           >
-            Open Menu
+            Novo
           </IconButton>
+        </div>
+        <div style={{ marginLeft: 'auto' }}> 
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Option 1</MenuItem>
-            <MenuItem onClick={handleClose}>Option 2</MenuItem>
-            <MenuItem onClick={handleClose}>Option 3</MenuItem>
+            <MenuItem onClick={handleClose}>Projeto</MenuItem>
+            <MenuItem onClick={handleClose}>Capitulo</MenuItem>
           </Menu>
         </div>
+
+
+        {/* Botao inserir */}
+        <div style={{ position: 'absolute', left: 130 }}> 
+          <IconButton
+            className='menuButton'
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+            color="inherit"
+          >
+            Inserir
+          </IconButton>
+        </div>
+        <div style={{ marginLeft: 'auto' }}> 
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>Imagens</MenuItem>
+            <MenuItem onClick={handleClose}>Tabela</MenuItem>
+          </Menu>
+        </div>
+
+        {/* Botao Formatar */}
+        <div style={{ position: 'absolute', left: 240 }}> 
+          <IconButton
+            className='menuButton'
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+            color="inherit"
+          >
+            Formatar
+          </IconButton>
+        </div>
+
+        {/* Botao exportar */}
+        <div style={{ position: 'absolute', right: 20 }}> 
+          <IconButton
+            className='menuButton'
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+            color="inherit"
+          >
+            Exportar
+          </IconButton>
+        </div>
+        <div style={{ marginLeft: 'auto' }}> 
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>PDF</MenuItem>
+            <MenuItem onClick={handleClose}>Arquivo LaTeX</MenuItem>
+          </Menu>
+        </div>
+
+
       </Toolbar>
     </AppBar>
   );

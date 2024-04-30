@@ -28,6 +28,7 @@ function App() {
           <BrowserRouter>
               
                   <NavHeader/>
+                  
               
           </BrowserRouter>
       </ThemeProvider>
