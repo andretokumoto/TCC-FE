@@ -1,23 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState }  from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import TextField from '@mui/material/TextField';
 import './navheader.css'; 
 
 //const ItensNovo = []
 
-const ItensInserir = ['Imagem','Tabela']
+//const ItensInserir = ['Imagem','Tabela']
 
 
 
-const BarraDeMenu = () => {
+const NavHeader = () => {
 
+    const [titulo, setTitulo] = useState('Título do Projeto')//varivel que armazena titulo
+    
+    // Função para atualizar o estado com o valor digitado
+    const handleTituloChange = (event) => {
+        setTitulo(event.target.value); 
+    };
 
+    return (
+        <AppBar className='header'>
 
+            <Toolbar>
+                <TextField
+                    value={titulo}
+                    onChange={handleTituloChange}
+                    className="custom-textfield" 
+                />
+            </Toolbar>
+        
+        </AppBar>
+      )
 
 }
 
-export default BarraDeMenu;
+export default NavHeader;

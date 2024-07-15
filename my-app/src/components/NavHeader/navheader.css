@@ -1,34 +1,18 @@
-.MuiAppBar-root.top-menu {
-  background-color: #2C664A;
+
+.header {
+  display: flex;
+  padding: 1rem;
+  background-color: #0a5700 !important;
   color: white;
-  padding: 1px;
 }
 
-.MuiTypography-root.menu-title {
-  color: #fff;
+.header .custom-textfield {
+  background-color: #0a5700;
+  color: white !important;
+  border-radius: 8px;
+  margin-bottom: 10px;
   text-align: center;
-  flex-grow: 1;
-  font-size: 18px;
 }
 
-.MuiButtonBase-root.menuButton {
-  color: #fff;
-}
 
-/* navheader.css */
-
-.menuButton {
-  /* Adicione os estilos desejados para o botão Inserir */
-  color: white; /* Cor do texto */
-  background-color: #333; /* Cor de fundo */
-  border-radius: 5px; /* Borda arredondada */
-  padding: 8px 12px; /* Espaçamento interno */
-  margin-right: 5px; /* Margem à direita */
-  font-size: 16px; /* Tamanho da fonte */
-  border: none; /* Remova a borda */
-}
-
-.menuButton:hover {
-  background-color: #555; /* Cor de fundo ao passar o mouse */
-}
 
