@@ -9,8 +9,9 @@
 /*caixa de entrada do titulo*/
 .toolbar {
   display: flex;
-  justify-content: center; 
   width: 100%;
+  align-items: center;
+  justify-content: space-between; 
 }
 
 /*estilo do texto de entrada na caixa de titulo*/
@@ -26,14 +27,24 @@
 .text_field_title {
   width: 100%; 
   max-width: 600px; 
+  margin-left: auto !important; 
+  margin-right: auto !important; 
 }
 
 /*estilo dos botões*/
 .butom_simple{
-  padding: 1cm;
+  align-items: center;
+  padding: 0.5rem 1rem;
   color: white !important;
-
+  
 }
 
+.button_left {
+  display: flex;
+  gap: 1rem; 
+  margin-right: 1rem;
+}
 
-
+.button_right {
+  margin-left: 1rem;
+}
