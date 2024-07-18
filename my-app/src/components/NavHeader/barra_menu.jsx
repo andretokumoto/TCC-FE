@@ -18,15 +18,19 @@ const NavHeader = () => {
     const handleTituloChange = (event) => {
         setTitulo(event.target.value); 
     };
-
+    /*
+        TextField cria o elemento de ent
+    */
     return (
         <AppBar className='header'>
-
-            <Toolbar>
+            <Toolbar className='toolbar'>
                 <TextField
+                    className='text_field_title'
                     value={titulo}
                     onChange={handleTituloChange}
-                    className="custom-textfield" 
+                    //puxa a estilização do css para o valor de entrada
+                    inputProps={{
+                        className: "input_title" }}
                 />
             </Toolbar>
         

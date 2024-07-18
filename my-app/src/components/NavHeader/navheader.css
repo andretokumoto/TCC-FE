@@ -1,17 +1,31 @@
-
+/*estilo da barra de menu superior*/
 .header {
   display: flex;
   padding: 1rem;
   background-color: #0a5700 !important;
-  color: white;
+  color: white !important;
 }
 
-.header .custom-textfield {
+/*caixa de entrada do titulo*/
+.toolbar {
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+}
+
+/*estilo do texto de entrada na caixa de titulo*/
+.input_title {
   background-color: #0a5700;
   color: white !important;
   border-radius: 8px;
   margin-bottom: 10px;
   text-align: center;
+  padding: 1cm;
+}
+
+.text_field_title {
+  width: 100%; 
+  max-width: 600px; 
 }
 
 
