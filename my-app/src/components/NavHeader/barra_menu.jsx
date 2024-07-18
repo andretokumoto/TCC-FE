@@ -3,11 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import './navheader.css'; 
+import './navheader.css';
+import DropdownButton from './listaSuspensa.jsx' 
 
-//const ItensNovo = []
 
-//const ItensInserir = ['Imagem','Tabela']
+const ItensInserir = ['Imagem','Tabela']
 
 //botões simples, sem listas suspensas
 const SimpleButton = (props) =>{
@@ -37,6 +37,7 @@ const NavHeader = () => {
     
                 <div className='button_left'>
                     <SimpleButton nameButton='Novo Projeto'/>
+                    <DropdownButton options={ItensInserir} nameButton='Inserir' />
                 </div>
 
                 <TextField
