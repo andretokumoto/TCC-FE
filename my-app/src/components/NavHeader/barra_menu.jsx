@@ -18,12 +18,12 @@ const NavHeader = () => {
     const handleTituloChange = (event) => {
         setTitulo(event.target.value); 
     };
-    /*
-        TextField cria o elemento de ent
-    */
-    return (
-        <AppBar className='header'>
-            <Toolbar className='toolbar'>
+
+    //caixa de entrada de titulo
+    const InputTitle = () => {
+
+        return(
+            <div>
                 <TextField
                     className='text_field_title'
                     value={titulo}
@@ -32,6 +32,20 @@ const NavHeader = () => {
                     inputProps={{
                         className: "input_title" }}
                 />
+            </div>
+        )
+
+    }
+
+    /*
+        TextField cria o elemento de ent
+    */
+    return (
+        <AppBar className='header'>
+            <Toolbar className='toolbar'>
+    
+                <InputTitle/>
+
             </Toolbar>
         
         </AppBar>

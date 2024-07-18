@@ -28,5 +28,12 @@
   max-width: 600px; 
 }
 
+/*estilo dos botões*/
+.butom_simple{
+  padding: 1cm;
+  color: white !important;
+
+}
+
 
 
