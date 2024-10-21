@@ -1,0 +1,12 @@
+
+.text_field {
+    border: 1px solid #ccc;
+    padding: 10px; 
+    min-height: 100px;
+    width: 400px; 
+    font-family: Arial; 
+    font-size: 16px;
+    margin-top: 110px;
+    margin-left: 350px;
+  
+}
