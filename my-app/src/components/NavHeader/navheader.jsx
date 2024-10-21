@@ -40,15 +40,16 @@ const NavHeader = () => {
                     <DropdownButton options={ItensInserir} nameButton='Inserir' />
                 </div>
 
-                <TextField
-                    className='text_field_title'
-                    value={titulo}
-                    onChange={handleTituloChange}
-                    //puxa a estilização do css para o valor de entrada
-                    inputProps={{
-                        className: "input_title" }}
-                />
-
+                <div className='text_field_title'>
+                    <TextField
+                        
+                        value={titulo}
+                        onChange={handleTituloChange}
+                        //puxa a estilização do css para o valor de entrada
+                        inputProps={{
+                            className: "input_title" }}
+                    />
+                </div>
             </Toolbar>
         
         </AppBar>
