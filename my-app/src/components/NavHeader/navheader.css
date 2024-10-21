@@ -1,6 +1,5 @@
 /*estilo da barra de menu superior*/
 .header {
-  display: flex;
   padding: 1rem;
   background-color: #0a5700 !important;
   color: white !important;
@@ -14,6 +13,13 @@
   justify-content: space-between; 
 }
 
+.text_field_title {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+}
+
 /*estilo do texto de entrada na caixa de titulo*/
 .input_title {
   background-color: #0a5700;
@@ -22,14 +28,7 @@
   margin-bottom: 10px;
   text-align: center;
   padding: 1cm;
-}
-
-.text_field_title {
-  width: 100%; 
-  max-width: 600px; 
-  margin-left: auto !important; 
-  margin-right: auto !important; 
-  align-items: center;
+  font-family: Helvetica;
 }
 
 /*estilo dos botões*/
@@ -46,5 +45,8 @@
 }
 
 .button_right {
-  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-left: auto; 
+  display: flex;
+  
 }

@@ -8,6 +8,7 @@ import DropdownButton from './listaSuspensa.jsx'
 
 
 const ItensInserir = ['Imagem','Tabela']
+const ItensBaixar = ['PDF','LaTeX']
 
 //botões simples, sem listas suspensas
 const SimpleButton = (props) =>{
@@ -50,6 +51,12 @@ const NavHeader = () => {
                             className: "input_title" }}
                     />
                 </div>
+                <div className='button_right'>
+                     <DropdownButton options={ItensBaixar} nameButton='Baixar' />
+                </div>
+
+
+
             </Toolbar>
         
         </AppBar>
