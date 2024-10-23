@@ -37,7 +37,7 @@ const NavHeader = () => {
             <Toolbar className='toolbar'>
     
                 <div className='button_left'>
-                    <SimpleButton nameButton='Novo Projeto'/>
+                    <SimpleButton nameButton='Novo'/>
                     <DropdownButton options={ItensInserir} nameButton='Inserir' />
                 </div>
 
