@@ -52,6 +52,7 @@ const NavHeader = () => {
                     />
                 </div>
                 <div className='button_right'>
+                     <SimpleButton nameButton='Compilar'/>
                      <DropdownButton options={ItensBaixar} nameButton='Baixar' />
                 </div>
 
