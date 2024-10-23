@@ -6,7 +6,7 @@ import './pages.css'
 const Exibe = (props)=>{
     const tipo_documento = props.tipo;
 
-    if(tipo_documento == 'oficio'){
+    if(tipo_documento === 'oficio'){
       return(
         <div>
             <NavHeader/>
