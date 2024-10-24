@@ -1,0 +1,13 @@
+.input_text {
+    background-color: white;
+    color: #0a5700;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 1cm;
+    font-family: Helvetica;
+  }
+
+.numero_doc{
+    margin-top: 100px;
+}

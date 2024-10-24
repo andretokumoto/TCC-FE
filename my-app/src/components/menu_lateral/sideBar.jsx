@@ -1,19 +1,44 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import './sideBar.css';
 
 export default function SideBar() {
+  const [numero_oficio, setNumero_oficio] = useState('');
+
+  const handleTextChange = (event) => {
+    setNumero_oficio(event.target.value);
+  };
+
+  const InputText = (props) => {
+    const { texto, value, onChange } = props;
+
+    return (
+      <TextField
+        helperText={texto}
+        value={value}
+        onChange={onChange}
+        inputProps={{
+          className: 'input_text',
+        }}
+        
+      />
+    );
+  };
+
+  // Definição correta do tema usando createTheme
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#0a5700',
+        dark: '#0a5700',
+      },
+    },
+  });
+
   return (
-    <ThemeProvider
-      theme={{
-        palette: {
-          primary: {
-            main: '#0a5700',
-            dark: '#0a5700',
-          },
-        },
-      }}
-    >
+    <ThemeProvider theme={theme}>
       <Box
         sx={{
           marginLeft: 0,
@@ -26,7 +51,13 @@ export default function SideBar() {
           },
         }}
       >
-
+        <div className="numero_doc">
+          <InputText
+            texto="Número do Ofício"
+            value={numero_oficio}
+            onChange={handleTextChange}
+          />
+        </div>
       </Box>
     </ThemeProvider>
   );
