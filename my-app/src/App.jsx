@@ -1,12 +1,9 @@
-import './App.css';
+import './style/App.css';
 import { BrowserRouter/*, Route, Routes, Navigate*/ } from 'react-router-dom';
 import { React/*, useContext */} from 'react';
 import {  createTheme,ThemeProvider } from '@mui/material';
 //import NavHeader from './components/NavHeader/barra_menu.jsx'
 import Pages from './pages';
-
-
-//import GlobalStyles from './styles/GlobalStyles';
 
 const theme = createTheme();
 

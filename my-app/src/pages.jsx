@@ -1,7 +1,7 @@
 import NavHeader from './components/NavHeader/navheader.jsx'
 import Editor from './components/editor/editor.jsx';
 import React from 'react';
-import './pages.css'
+import './style/pages.css'
 
 const Exibe = (props)=>{
     const tipo_documento = props.tipo;
