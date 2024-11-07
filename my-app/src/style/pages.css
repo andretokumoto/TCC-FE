@@ -18,7 +18,7 @@
   
   /* Estilos para a área de visualização do arquivo */
   .file_view {
-    margin-left: 400px; /* Margem esquerda para empurrar o conteúdo para o lado da barra lateral */
+    margin-left: 0px; /* Margem esquerda para empurrar o conteúdo para o lado da barra lateral */
     flex-grow: 1;
     padding: 1rem;
     overflow-y: auto; /* Permitir rolagem vertical se necessário */

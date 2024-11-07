@@ -15,7 +15,6 @@ const Exibe = (props) => {
           <div className="sidebar">
             <SideBar />
           </div>
-
           <div className='file_view'>
             <Editor />
           </div>
