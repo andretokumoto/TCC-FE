@@ -22,7 +22,6 @@ export default function SideBar() {
         inputProps={{
           className: 'input_text',
         }}
-        
       />
     );
   };
@@ -43,7 +42,7 @@ export default function SideBar() {
         sx={{
           marginLeft: 0,
           width: 400,
-          height: 1000,
+          height: '100vh',
           borderRadius: 0,
           bgcolor: 'primary.main',
           '&:hover': {

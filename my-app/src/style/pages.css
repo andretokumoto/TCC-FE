@@ -1,29 +1,24 @@
-* {
-    box-sizing: border-box;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
+/* Estilos para a estrutura da página */
 .page-container {
     display: flex;
-    height: 100vh;
-}
-
-.sidebar {
-    width: 250px; 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    height: 100vh; 
-    padding: 0px; 
-}
-
-.file_view {
-    flex-grow: 1; 
-    margin-left: 250px; 
-    padding: 20px; 
-}
+    height: 100vh; /* Altura total da tela */
+  }
+  
+  /* Estilos para a barra lateral fixa */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 400px; /* Largura fixa da barra lateral */
+    height: 100vh; /* Altura total da tela */
+    z-index: 1; /* Para garantir que fique sobre outros elementos */
+  }
+  
+  /* Estilos para a área de visualização do arquivo */
+  .file_view {
+    margin-left: 400px; /* Margem esquerda para empurrar o conteúdo para o lado da barra lateral */
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto; /* Permitir rolagem vertical se necessário */
+  }
+  
