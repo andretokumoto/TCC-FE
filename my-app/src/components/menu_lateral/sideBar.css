@@ -26,3 +26,11 @@
    
   }
   
+  .camposInferiores {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    align-items: center !important; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adicionar espaçamento ao redor do conteúdo */
+   
+  }
