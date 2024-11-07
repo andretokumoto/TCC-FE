@@ -38,7 +38,14 @@
   color: white !important;
 }
 
-.button_left, .button_right {
+.button_left {
   display: flex;
   gap: 1rem;
+}
+
+.button_right {
+  display: flex;
+  gap: 1rem;
+  margin-left: 10px; /* Corrigido para usar 'px' */
+  margin-right: 20px; /* Adiciona uma margem direita */
 }
