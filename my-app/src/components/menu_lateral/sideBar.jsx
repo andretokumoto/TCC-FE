@@ -11,7 +11,7 @@ export default function SideBar() {
     setNumero_oficio(event.target.value);
   };
 
-  const InputText = (props) => {
+  /*const InputText = (props) => {
     const { texto, value, onChange } = props;
 
     return (
@@ -22,9 +22,11 @@ export default function SideBar() {
         inputProps={{
           className: 'input_text',
         }}
+        variant="outlined"
+        fullWidth
       />
     );
-  };
+  };*/
 
   // Definição correta do tema usando createTheme
   const theme = createTheme({
@@ -41,6 +43,7 @@ export default function SideBar() {
       <Box
         sx={{
           marginLeft: 0,
+          marginTop: 12,
           width: 400,
           height: '100vh',
           borderRadius: 0,
@@ -51,11 +54,16 @@ export default function SideBar() {
         }}
       >
         <div className="numero_doc">
-          <InputText
-            texto="Número do Ofício"
-            value={numero_oficio}
-            onChange={handleTextChange}
+
+          <TextField
+              helperText={"Número do Ofício"}
+              value={numero_oficio}
+              onChange={handleTextChange}
+              inputProps={{
+                className: 'input_text',
+              }}
           />
+
         </div>
       </Box>
     </ThemeProvider>

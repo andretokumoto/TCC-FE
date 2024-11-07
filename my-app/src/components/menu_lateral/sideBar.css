@@ -1,13 +1,28 @@
 .input_text {
-    background-color: white;
-    color: #0a5700;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
-    padding: 1cm;
-    font-family: Helvetica;
-  }
-
-.numero_doc{
-    margin-top: 100px;
+  background-color: rgb(214, 255, 219) !important; /* Fundo branco */
+  color: black !important; /* Texto preto */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  font-family: Helvetica;
 }
+
+.input_text .MuiInputBase-input {
+  color: black !important; /* Texto preto dentro do input */
+}
+
+.MuiFormHelperText-root {
+  color: white !important; /* Texto auxiliar branco */
+}
+
+  .numero_doc {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adicionar espaçamento ao redor do conteúdo */
+    margin-top: 64px;
+   
+  }
+  
