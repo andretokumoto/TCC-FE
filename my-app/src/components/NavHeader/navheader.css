@@ -8,18 +8,15 @@
 /*caixa de entrada do titulo*/
 .toolbar {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; 
+  width: 100%;
 }
 
 .text_field_title {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%; 
 }
 
 /*estilo do texto de entrada na caixa de titulo*/
@@ -31,24 +28,17 @@
   text-align: center;
   padding: 1cm;
   font-family: Helvetica;
+  width: 100%; 
 }
 
 /*estilo dos botões*/
-.butom_simple{
+.butom_simple {
   align-items: center;
   padding: 0.5rem 1rem;
-  color: white !important; 
+  color: white !important;
 }
 
-.button_left {
+.button_left, .button_right {
   display: flex;
-  gap: 1rem; 
-  margin-right: 5rem;
-}
-
-.button_right {
-  margin-right: 2rem;
-  margin-left: auto; 
-  display: flex;
-  gap: 1rem; 
+  gap: 1rem;
 }
