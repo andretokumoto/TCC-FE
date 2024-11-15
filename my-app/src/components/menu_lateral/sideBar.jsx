@@ -69,7 +69,7 @@ export default function SideBar() {
         sx={{
           marginLeft: 0,
           marginTop: 12,
-          width: 400,
+          width: 300,
           height: '100vh',
           borderRadius: 0,
           bgcolor: 'primary.main',

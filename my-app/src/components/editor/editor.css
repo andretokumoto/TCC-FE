@@ -4,7 +4,7 @@
     align-items: flex-start;
     height: calc(100vh - 64px); /* Altura total da tela menos a altura da barra superior */
     margin-top: 64px; /* Altura da barra superior para alinhar corretamente */
-    margin-left: 400px; /* Largura da barra lateral */
+    margin-left: 300px; /* Largura da barra lateral */
     padding: 1rem;
   }
   

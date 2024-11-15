@@ -21,9 +21,9 @@
     flex-direction: column; /* Coloca os elementos em uma coluna */
     align-items: center; /* Centraliza horizontalmente */
     justify-content: center; /* Centraliza verticalmente */
-    padding: 20px; /* Adicionar espaçamento ao redor do conteúdo */
+    padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
     margin-top: 64px;
-   
+   width: 10;
   }
   
   .camposInferiores {
@@ -31,6 +31,6 @@
     flex-direction: column; /* Coloca os elementos em uma coluna */
     align-items: center !important; /* Centraliza horizontalmente */
     justify-content: center; /* Centraliza verticalmente */
-    padding: 20px; /* Adicionar espaçamento ao redor do conteúdo */
+    padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
    
   }
