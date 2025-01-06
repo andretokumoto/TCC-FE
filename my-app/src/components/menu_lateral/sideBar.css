@@ -1,3 +1,14 @@
+/* sideBar.css */
+.side-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #0a5700;
+}
+
 .input_text {
   background-color: rgb(214, 255, 219) !important; /* Fundo branco */
   color: black !important; /* Texto preto */
@@ -16,21 +27,20 @@
   color: white !important; /* Texto auxiliar branco */
 }
 
-  .numero_doc {
-    display: flex;
-    flex-direction: column; /* Coloca os elementos em uma coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
-    margin-top: 64px;
-   width: 10;
-  }
-  
-  .camposInferiores {
-    display: flex;
-    flex-direction: column; /* Coloca os elementos em uma coluna */
-    align-items: center !important; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
-   
-  }
+.numero_doc {
+  display: flex;
+  flex-direction: column; /* Coloca os elementos em uma coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
+  margin-top: 94px;
+  width: 10;
+}
+
+.camposInferiores {
+  display: flex;
+  flex-direction: column; /* Coloca os elementos em uma coluna */
+  align-items: center !important; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
+}

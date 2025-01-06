@@ -8,7 +8,7 @@
   .sidebar {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 10;
     width: 400px; /* Largura fixa da barra lateral */
     height: 100vh; /* Altura total da tela */
     z-index: 2; /* Para garantir que fique sobre outros elementos */

@@ -14,46 +14,17 @@ export default function SideBar() {
   const [nomeRemetente, setNomeRemetente] = useState(''); 
   const [cargoRemetente, setCargoRemetente] = useState(''); 
   const [organizacaoRemetente, setOrganizacaoRemetente] = useState(''); 
-  
 
+  const handleNumChange = (event) => setNumero_oficio(event.target.value);
+  const handleDestinatarioChange = (event) => setDestinatario(event.target.value);
+  const handleLogradouroDestChange = (event) => setLogradouroDest(event.target.value);
+  const handleCidEstadoDestChange = (event) => setCidadeDest(event.target.value);
+  const handleCepDestChange = (event) => setCep(event.target.value);
+  const handleAssuntoChange = (event) => setAssunto(event.target.value);
+  const handleNomeRemetenteChange = (event) => setNomeRemetente(event.target.value);
+  const handleCargoRemetenteChange = (event) => setCargoRemetente(event.target.value);
+  const handleOrganizacaoRemetenteChange = (event) => setOrganizacaoRemetente(event.target.value);
 
-  const handleNumChange = (event) => {
-    setNumero_oficio(event.target.value);
-  };
-
-  const handleDestinatarioChange = (event) => {
-    setDestinatario(event.target.value);
-  };
-
-  const handleLogradouroDestChange = (event) => {
-    setLogradouroDest(event.target.value);
-  };
-
-  const handleCidEstadoDestChange = (event) => {
-    setCidadeDest(event.target.value);
-  };
-
-  const handleCepDestChange = (event) => {
-    setCep(event.target.value);
-  };
-
-  const handleAssuntoChange = (event) => {
-    setAssunto(event.target.value);
-  };
-
-  const handleNomeRemetenteChange = (event) => {
-    setNomeRemetente(event.target.value);
-  };
-
-  const handleCargoRemetenteChange = (event) => {
-    setCargoRemetente(event.target.value);
-  };
-
-  const handleOrganizacaoRemetenteChange = (event) => {
-    setOrganizacaoRemetente(event.target.value);
-  };
-  
-  // Definição correta do tema usando createTheme
   const theme = createTheme({
     palette: {
       primary: {
@@ -65,121 +36,79 @@ export default function SideBar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          marginLeft: 0,
-          marginTop: 12,
-          width: 300,
-          height: '100vh',
-          borderRadius: 0,
-          bgcolor: 'primary.main',
-          '&:hover': {
-            bgcolor: 'primary.dark',
-          },
-        }}
-      >
+      <Box className="side-bar-container">
         <div className="numero_doc">
-
           <TextField
-              helperText={"Número do Ofício"}
-              value={numero_oficio}
-              onChange={handleNumChange}
-              inputProps={{
-                className: 'input_text',
-              }}
-          />
-
-        </div>
-
-        <div className="camposInferiores">
-
-          <TextField
-              helperText={"Destinátario"}
-              value={destinatario}
-              onChange={handleDestinatarioChange}
-              inputProps={{
-                className: 'input_text',
-              }}
+            helperText="Número do Ofício"
+            value={numero_oficio}
+            onChange={handleNumChange}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
-        <div className="camposInferiores">
-            <TextField
-                  helperText={"Logradouro do destinátario"}
-                  value={logradouroDest}
-                  onChange={handleLogradouroDestChange}
-                  inputProps={{
-                    className: 'input_text',
-                  }}
-              />
-        </div>
-
-        <div className="camposInferiores">
-            <TextField
-                  helperText={"Cidade e Estado do destinátario"}
-                  value={cidade}
-                  onChange={handleCidEstadoDestChange}
-                  inputProps={{
-                    className: 'input_text',
-                  }}
-              />
-        </div>
-
         <div className="camposInferiores">
           <TextField
-            helperText={"CEP do destinatário"}
+            helperText="Destinátario"
+            value={destinatario}
+            onChange={handleDestinatarioChange}
+            inputProps={{ className: 'input_text' }}
+          />
+        </div>
+        <div className="camposInferiores">
+          <TextField
+            helperText="Logradouro do destinátario"
+            value={logradouroDest}
+            onChange={handleLogradouroDestChange}
+            inputProps={{ className: 'input_text' }}
+          />
+        </div>
+        <div className="camposInferiores">
+          <TextField
+            helperText="Cidade e Estado do destinátario"
+            value={cidade}
+            onChange={handleCidEstadoDestChange}
+            inputProps={{ className: 'input_text' }}
+          />
+        </div>
+        <div className="camposInferiores">
+          <TextField
+            helperText="CEP do destinatário"
             value={cep}
             onChange={handleCepDestChange}
-            inputProps={{
-              className: 'input_text',
-            }}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
         <div className="camposInferiores">
           <TextField
-            helperText={"Assunto"}
+            helperText="Assunto"
             value={assunto}
             onChange={handleAssuntoChange}
-            inputProps={{
-              className: 'input_text',
-            }}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
         <div className="camposInferiores">
           <TextField
-            helperText={"Nome do remetente"}
+            helperText="Nome do remetente"
             value={nomeRemetente}
             onChange={handleNomeRemetenteChange}
-            inputProps={{
-              className: 'input_text',
-            }}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
         <div className="camposInferiores">
           <TextField
-            helperText={"Cargo do remetente"}
+            helperText="Cargo do remetente"
             value={cargoRemetente}
             onChange={handleCargoRemetenteChange}
-            inputProps={{
-              className: 'input_text',
-            }}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
         <div className="camposInferiores">
           <TextField
-            helperText={"Organização do remetente"}
+            helperText="Organização do remetente"
             value={organizacaoRemetente}
             onChange={handleOrganizacaoRemetenteChange}
-            inputProps={{
-              className: 'input_text',
-            }}
+            inputProps={{ className: 'input_text' }}
           />
         </div>
-
       </Box>
     </ThemeProvider>
   );
