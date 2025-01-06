@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './navheader.css';
 import DropdownButton from './listaSuspensa.jsx' 
+import { htmlToText } from 'html-to-text' //para alterar o texto de entrada para formato latex
 
 
 const ItensInserir = ['Imagem','Tabela']
