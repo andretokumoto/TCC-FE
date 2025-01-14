@@ -25,6 +25,12 @@ export default function SideBar() {
   const handleCargoRemetenteChange = (event) => setCargoRemetente(event.target.value);
   const handleOrganizacaoRemetenteChange = (event) => setOrganizacaoRemetente(event.target.value);
 
+
+  const handleTextfieldClick = (event) => {
+    event.target.value = '';
+  };
+
+
   const theme = createTheme({
     palette: {
       primary: {
@@ -57,6 +63,7 @@ export default function SideBar() {
           <TextField
             helperText="Logradouro do destinátario"
             value={logradouroDest}
+            onClick={handleTextfieldClick}
             onChange={handleLogradouroDestChange}
             inputProps={{ className: 'input_text' }}
           />
@@ -66,6 +73,7 @@ export default function SideBar() {
             helperText="Cidade e Estado do destinátario"
             value={cidade}
             onChange={handleCidEstadoDestChange}
+            onClick={handleTextfieldClick}
             inputProps={{ className: 'input_text' }}
           />
         </div>
@@ -74,6 +82,7 @@ export default function SideBar() {
             helperText="CEP do destinatário"
             value={cep}
             onChange={handleCepDestChange}
+            onClick={handleTextfieldClick}
             inputProps={{ className: 'input_text' }}
           />
         </div>
