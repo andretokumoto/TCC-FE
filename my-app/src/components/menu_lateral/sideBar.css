@@ -10,7 +10,7 @@
 }
 
 .input_text {
-  background-color: rgb(214, 255, 219) !important; /* Fundo branco */
+  background-color: white !important; /* Fundo branco */
   color: black !important; /* Texto preto */
   border-radius: 8px;
   margin-bottom: 10px;
