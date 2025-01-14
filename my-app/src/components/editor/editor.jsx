@@ -3,11 +3,12 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './editor.css';
 
-function Editor() {
+function Editor(/*{ onContentChange }*/) {
   const [conteudo, setConteudo] = useState('');
 
   const handleChange = (value) => {
     setConteudo(value);
+    //onContentChange(value);
   };
 
   return (

@@ -7,13 +7,23 @@ import './style/pages.css';
 const Exibe = (props) => {
   const tipo_documento = props.tipo;
 
-  if (tipo_documento === 'oficio') {
+
+  const convertToLaTeX = (html) => {
+
+    return html
+      .replace(/<b>(.*?)<\/b>/g, '\\textbf{$1}')
+      .replace(/<i>(.*?)<\/i>/g, '\\textit{$1}')
+      .replace(/<u>(.*?)<\/u>/g, '\\underline{$1}')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/<[^>]+>/g, '');
+  };
+
     return (
       <div>
         <NavHeader />
         <div className="page-container">
           <div className="sidebar">
-            <SideBar />
+            <SideBar tipo='memorando'/>
           </div>
           <div className='file_view'>
             <Editor />
@@ -21,7 +31,7 @@ const Exibe = (props) => {
         </div>
       </div>
     );
-  }
+  
 }
 
 function Pages() {

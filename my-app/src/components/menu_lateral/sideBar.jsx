@@ -4,7 +4,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import './sideBar.css';
 
-export default function SideBar() {
+export default function SideBar(props) {
+  const tipo_documento = props.tipo;
+
   const [numero_oficio, setNumero_oficio] = useState('');
   const [destinatario, setDestinatario] = useState('');
   const [logradouroDest, setLogradouroDest] = useState('Logradouro, número');
@@ -40,85 +42,142 @@ export default function SideBar() {
     },
   });
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Box className="side-bar-container">
-        <div className="numero_doc">
-          <TextField
-            helperText="Número do Ofício"
-            value={numero_oficio}
-            onChange={handleNumChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Destinátario"
-            value={destinatario}
-            onChange={handleDestinatarioChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Logradouro do destinátario"
-            value={logradouroDest}
-            onClick={handleTextfieldClick}
-            onChange={handleLogradouroDestChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Cidade e Estado do destinátario"
-            value={cidade}
-            onChange={handleCidEstadoDestChange}
-            onClick={handleTextfieldClick}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="CEP do destinatário"
-            value={cep}
-            onChange={handleCepDestChange}
-            onClick={handleTextfieldClick}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Assunto"
-            value={assunto}
-            onChange={handleAssuntoChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Nome do remetente"
-            value={nomeRemetente}
-            onChange={handleNomeRemetenteChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Cargo do remetente"
-            value={cargoRemetente}
-            onChange={handleCargoRemetenteChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-        <div className="camposInferiores">
-          <TextField
-            helperText="Organização do remetente"
-            value={organizacaoRemetente}
-            onChange={handleOrganizacaoRemetenteChange}
-            inputProps={{ className: 'input_text' }}
-          />
-        </div>
-      </Box>
-    </ThemeProvider>
-  );
+  switch(tipo_documento) {
+    case 'oficio':
+      return (
+        <ThemeProvider theme={theme}>
+          <Box className="side-bar-container">
+            <div className="numero_doc">
+              <TextField
+                helperText="Número do Ofício"
+                value={numero_oficio}
+                onChange={handleNumChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Destinátário"
+                value={destinatario}
+                onChange={handleDestinatarioChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Logradouro do destinatário"
+                value={logradouroDest}
+                onClick={handleTextfieldClick}
+                onChange={handleLogradouroDestChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Cidade e Estado do destinatário"
+                value={cidade}
+                onChange={handleCidEstadoDestChange}
+                onClick={handleTextfieldClick}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="CEP do destinatário"
+                value={cep}
+                onChange={handleCepDestChange}
+                onClick={handleTextfieldClick}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Assunto"
+                value={assunto}
+                onChange={handleAssuntoChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Nome do remetente"
+                value={nomeRemetente}
+                onChange={handleNomeRemetenteChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Cargo do remetente"
+                value={cargoRemetente}
+                onChange={handleCargoRemetenteChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+            <div className="camposInferiores">
+              <TextField
+                helperText="Organização do remetente"
+                value={organizacaoRemetente}
+                onChange={handleOrganizacaoRemetenteChange}
+                inputProps={{ className: 'input_text' }}
+              />
+            </div>
+          </Box>
+        </ThemeProvider>
+      );
+
+      case 'memorando':
+        return (
+          <ThemeProvider theme={theme}>
+            <Box className="side-bar-container">
+              <div className="numero_doc">
+                <TextField
+                  helperText="Assunto"
+                  value={assunto}
+                  onChange={handleAssuntoChange}
+                  inputProps={{ className: 'input_text' }}
+                />
+              </div>
+              <div className="camposInferiores">
+                <TextField
+                  helperText="Destinátário"
+                  value={destinatario}
+                  onChange={handleDestinatarioChange}
+                  inputProps={{ className: 'input_text' }}
+                />
+              </div>
+              <div className="camposInferiores">
+                <TextField
+                  helperText="Nome do remetente"
+                  value={nomeRemetente}
+                  onClick={handleTextfieldClick}
+                  onChange={handleNomeRemetenteChange}
+                  inputProps={{ className: 'input_text' }}
+                />
+              </div>
+              <div className="camposInferiores">
+                <TextField
+                  helperText="Cargo do remetente"
+                  value={cargoRemetente}
+                  onChange={handleCargoRemetenteChange}
+                  onClick={handleTextfieldClick}
+                  inputProps={{ className: 'input_text' }}
+                />
+              </div>      
+              <div className="camposInferiores">
+                <TextField
+                  helperText="Organização do remetente"
+                  value={organizacaoRemetente}
+                  onChange={handleOrganizacaoRemetenteChange}
+                  inputProps={{ className: 'input_text' }}
+                />
+              </div>
+            </Box>
+          </ThemeProvider>
+        );
+
+    default:
+      return null;  // Caso o tipo_documento não seja 'oficio', retorna null ou outro conteúdo desejado
+  }
+  
 }

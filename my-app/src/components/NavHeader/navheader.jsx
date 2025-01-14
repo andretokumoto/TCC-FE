@@ -28,6 +28,10 @@ const NavHeader = () => {
         setTitulo(event.target.value); 
     };
 
+    // Função chamada ao clicar em "Compilar"
+ /*   const handleCompile = () => {
+        handleSend({ titulo });
+    };*/
 
     /*
         TextField cria o elemento de entrada do titulo
@@ -53,7 +57,7 @@ const NavHeader = () => {
                     />
                 </div>
                 <div className='button_right'>
-                     <SimpleButton nameButton='Compilar'/>
+                     <SimpleButton nameButton='Compilar' /*onClick={handleCompile}*//>
                      <DropdownButton options={ItensBaixar} nameButton='Baixar' />
                 </div>
 
