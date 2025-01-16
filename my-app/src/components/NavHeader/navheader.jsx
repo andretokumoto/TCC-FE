@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import PropTypes from 'prop-types';
 import './navheader.css';
 
-const ItensInserir = ['Imagem', 'Tabela'];
+const ItensInserir = ['Oficio', 'Memorando'];
 const ItensBaixar = ['PDF', 'LaTeX'];
 
 // Componente DropdownButton (Lista Suspensa)
@@ -85,10 +85,9 @@ const NavHeader = ({ onCompile, onDownload }) => {
     <AppBar className="header">
       <Toolbar className="toolbar">
         <div className="button_left">
-          <SimpleButton nameButton="Novo" />
           <DropdownButton
             options={ItensInserir}
-            nameButton="Inserir"
+            nameButton="Tipo de Arquivo"
             onSelect={(option) => console.log(`Inserir: ${option}`)}
           />
         </div>
