@@ -3,12 +3,12 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './editor.css';
 
-function Editor(/*{ onContentChange }*/) {
+function Editor({ onContentChange }) {
   const [conteudo, setConteudo] = useState('');
 
   const handleChange = (value) => {
     setConteudo(value);
-    //onContentChange(value);
+    onContentChange({ content: value });  // Envia o conteúdo do editor como JSON
   };
 
   return (

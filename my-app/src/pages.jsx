@@ -7,12 +7,10 @@ import './style/pages.css';
 const Exibe = (props) => {
   const tipo_documento = props.tipo;
 
-  // Estados para os dados do Editor e SideBar
   const [sidebarData, setSidebarData] = useState({});
   const [editorContent, setEditorContent] = useState('');
-  const [fileContent, setFileContent] = useState(''); // Para exibição na tela
+  const [fileContent, setFileContent] = useState('');
 
-  // Conversão do conteúdo do Editor para LaTeX
   const convertToLaTeX = (html) => {
     return html
       .replace(/<b>(.*?)<\/b>/g, '\\textbf{$1}')
@@ -22,7 +20,6 @@ const Exibe = (props) => {
       .replace(/<[^>]+>/g, '');
   };
 
-  // Função genérica para lidar com envio de dados
   const handleSendData = async (endpoint, actionType) => {
     const latexContent = convertToLaTeX(editorContent);
 
@@ -45,18 +42,17 @@ const Exibe = (props) => {
         throw new Error(`Erro: ${response.statusText}`);
       }
 
-      // Lida com as respostas de acordo com o tipo de ação
       if (actionType === 'download') {
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'arquivo-gerado.pdf'; // Nome do arquivo gerado
+        a.download = 'arquivo-gerado.pdf';
         a.click();
         window.URL.revokeObjectURL(url);
       } else if (actionType === 'display') {
         const content = await response.text();
-        setFileContent(content); // Atualiza o estado com o conteúdo retornado
+        setFileContent(content);
       }
     } catch (error) {
       console.error('Erro ao enviar dados para a API:', error);
@@ -65,12 +61,11 @@ const Exibe = (props) => {
 
   return (
     <div>
-      {/* Passa os callbacks para o NavHeader */}
       <NavHeader
-        onSubmitDownload1={() =>
+        onSubmitDownloadTeX={() =>
           handleSendData('https://api-backend-hddt.onrender.com/get-latex', 'download')
         }
-        onSubmitDownload2={() =>
+        onSubmitDownloadPDF={() =>
           handleSendData('https://api-backend-hddt.onrender.com/get-pdf', 'download')
         }
         onSubmitDisplay={() =>

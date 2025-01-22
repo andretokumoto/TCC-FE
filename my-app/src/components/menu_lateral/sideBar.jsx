@@ -6,7 +6,6 @@ import './sideBar.css';
 
 export default function SideBar(props) {
   const tipo_documento = props.tipo;
-
   const [numero_oficio, setNumero_oficio] = useState('');
   const [destinatario, setDestinatario] = useState('');
   const [logradouroDest, setLogradouroDest] = useState('Logradouro, número');
@@ -27,11 +26,24 @@ export default function SideBar(props) {
   const handleCargoRemetenteChange = (event) => setCargoRemetente(event.target.value);
   const handleOrganizacaoRemetenteChange = (event) => setOrganizacaoRemetente(event.target.value);
 
-
   const handleTextfieldClick = (event) => {
     event.target.value = '';
   };
 
+  const handleSaveData = () => {
+    const data = {
+      numero_oficio,
+      destinatario,
+      logradouroDest,
+      cidade,
+      cep,
+      assunto,
+      nomeRemetente,
+      cargoRemetente,
+      organizacaoRemetente,
+    };
+    props.onDataChange(data);  // Envia o JSON 
+  };
 
   const theme = createTheme({
     palette: {
@@ -122,62 +134,11 @@ export default function SideBar(props) {
                 inputProps={{ className: 'input_text' }}
               />
             </div>
+            <button onClick={handleSaveData}>Salvar Dados</button>  {/* Adiciona botão para enviar dados */}
           </Box>
         </ThemeProvider>
       );
-
-      case 'memorando':
-        return (
-          <ThemeProvider theme={theme}>
-            <Box className="side-bar-container">
-              <div className="numero_doc">
-                <TextField
-                  helperText="Assunto"
-                  value={assunto}
-                  onChange={handleAssuntoChange}
-                  inputProps={{ className: 'input_text' }}
-                />
-              </div>
-              <div className="camposInferiores">
-                <TextField
-                  helperText="Destinátário"
-                  value={destinatario}
-                  onChange={handleDestinatarioChange}
-                  inputProps={{ className: 'input_text' }}
-                />
-              </div>
-              <div className="camposInferiores">
-                <TextField
-                  helperText="Nome do remetente"
-                  value={nomeRemetente}
-                  onClick={handleTextfieldClick}
-                  onChange={handleNomeRemetenteChange}
-                  inputProps={{ className: 'input_text' }}
-                />
-              </div>
-              <div className="camposInferiores">
-                <TextField
-                  helperText="Cargo do remetente"
-                  value={cargoRemetente}
-                  onChange={handleCargoRemetenteChange}
-                  onClick={handleTextfieldClick}
-                  inputProps={{ className: 'input_text' }}
-                />
-              </div>      
-              <div className="camposInferiores">
-                <TextField
-                  helperText="Organização do remetente"
-                  value={organizacaoRemetente}
-                  onChange={handleOrganizacaoRemetenteChange}
-                  inputProps={{ className: 'input_text' }}
-                />
-              </div>
-            </Box>
-          </ThemeProvider>
-        );
-
     default:
-      return null;  // Caso o tipo_documento não seja 'oficio', retorna null ou outro conteúdo desejado
+      return null;
   }
-  
 }

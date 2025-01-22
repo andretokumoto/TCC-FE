@@ -27,7 +27,7 @@ const DropdownButton = ({ options, nameButton, onSelect }) => {
   const handleOptionSelect = (option) => {
     handleClose();
     if (onSelect) {
-      onSelect(option); 
+      onSelect(option);
     }
   };
 
@@ -81,6 +81,14 @@ const NavHeader = ({ onCompile, onDownload }) => {
     setTitulo(event.target.value);
   };
 
+  const handleDownload = (option) => {
+    if (option === 'PDF') {
+      onDownload('https://api-backend-hddt.onrender.com/get-pdf', 'download');
+    } else if (option === 'LaTeX') {
+      onDownload('https://api-backend-hddt.onrender.com/get-latex', 'download');
+    }
+  };
+
   return (
     <AppBar className="header">
       <Toolbar className="toolbar">
@@ -97,15 +105,22 @@ const NavHeader = ({ onCompile, onDownload }) => {
             value={titulo}
             onChange={handleTituloChange}
             inputProps={{ className: 'input_title' }}
+            label="Título"
+            variant="outlined"
           />
         </div>
 
         <div className="button_right">
-          <SimpleButton nameButton="Compilar" onClick={() => onCompile(titulo)} />
+          <SimpleButton
+            nameButton="Compilar"
+            onClick={() =>
+              onCompile('https://api-backend-hddt.onrender.com/get-pdf', 'display')
+            }
+          />
           <DropdownButton
             options={ItensBaixar}
             nameButton="Baixar"
-            onSelect={(option) => onDownload(option)}
+            onSelect={handleDownload}
           />
         </div>
       </Toolbar>
