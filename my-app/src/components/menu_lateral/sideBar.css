@@ -1,4 +1,3 @@
-/* sideBar.css */
 .side-bar-container {
   position: fixed;
   top: 0;
@@ -15,16 +14,31 @@
   border-radius: 8px;
   margin-bottom: 10px;
   text-align: center;
-  padding: 10px;
+  padding: 0; /* Remova o padding para evitar interferências */
   font-family: Helvetica;
 }
 
 .input_text .MuiInputBase-input {
   color: black !important; /* Texto preto dentro do input */
+  height: 50px !important; /* Ajuste a altura desejada */
+  padding: 10px; /* Adicione preenchimento interno conforme necessário */
 }
 
 .MuiFormHelperText-root {
   color: white !important; /* Texto auxiliar branco */
+}
+
+.textFieldCustom {
+  width: 250px;
+  height: 50px; /* Ajuste a altura desejada */
+}
+
+.textFieldContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .numero_doc {
@@ -32,9 +46,8 @@
   flex-direction: column; /* Coloca os elementos em uma coluna */
   align-items: center; /* Centraliza horizontalmente */
   justify-content: center; /* Centraliza verticalmente */
-  padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
+  padding: 30px; /* Adicionar espaçamento ao redor do conteúdo */
   margin-top: 94px;
-  width: 10;
 }
 
 .camposInferiores {
@@ -42,5 +55,5 @@
   flex-direction: column; /* Coloca os elementos em uma coluna */
   align-items: center !important; /* Centraliza horizontalmente */
   justify-content: center; /* Centraliza verticalmente */
-  padding: 10px; /* Adicionar espaçamento ao redor do conteúdo */
+  padding: 20px; /* Adicionar espaçamento ao redor do conteúdo */
 }

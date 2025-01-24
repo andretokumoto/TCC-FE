@@ -1,21 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-//import { Formik, Form, Field } from 'formik';
 import './sideBar.css';
 
 export default function SideBar(props) {
-  const tipo_documento = props.tipo;
+  const { tipo, onFormDataChange } = props;
+
   const [numero_oficio, setNumero_oficio] = useState('');
   const [destinatario, setDestinatario] = useState('');
-  const [logradouroDest, setLogradouroDest] = useState('Logradouro, número');
-  const [cidade, setCidadeDest] = useState('Cidade, Estado');
+  const [logradouroDest, setLogradouroDest] = useState('');
+  const [cidade, setCidadeDest] = useState('');
   const [cep, setCep] = useState('');
-  const [assunto, setAssunto] = useState(''); 
-  const [nomeRemetente, setNomeRemetente] = useState(''); 
-  const [cargoRemetente, setCargoRemetente] = useState(''); 
-  const [organizacaoRemetente, setOrganizacaoRemetente] = useState(''); 
+  const [assunto, setAssunto] = useState('');
+  const [nomeRemetente, setNomeRemetente] = useState('');
+  const [cargoRemetente, setCargoRemetente] = useState('');
+  const [organizacaoRemetente, setOrganizacaoRemetente] = useState('');
+
+  // Atualiza os dados no componente pai quando o estado muda
+  useEffect(() => {
+    if (onFormDataChange) {
+      onFormDataChange({
+        numero_oficio,
+        destinatario,
+        logradouroDest,
+        cidade,
+        cep,
+        assunto,
+        nomeRemetente,
+        cargoRemetente,
+        organizacaoRemetente,
+      });
+    }
+  }, [
+    numero_oficio,
+    destinatario,
+    logradouroDest,
+    cidade,
+    cep,
+    assunto,
+    nomeRemetente,
+    cargoRemetente,
+    organizacaoRemetente,
+    onFormDataChange,
+  ]);
 
   const handleNumChange = (event) => setNumero_oficio(event.target.value);
   const handleDestinatarioChange = (event) => setDestinatario(event.target.value);
@@ -27,23 +55,8 @@ export default function SideBar(props) {
   const handleCargoRemetenteChange = (event) => setCargoRemetente(event.target.value);
   const handleOrganizacaoRemetenteChange = (event) => setOrganizacaoRemetente(event.target.value);
 
-  const handleTextfieldClick = (event) => {
+ /* const handleTextfieldClick = (event) => {
     event.target.value = '';
-  };
-
- /* const handleSaveData = () => {
-    const data = {
-      numero_oficio,
-      destinatario,
-      logradouroDest,
-      cidade,
-      cep,
-      assunto,
-      nomeRemetente,
-      cargoRemetente,
-      organizacaoRemetente,
-    };
-    props.onDataChange(data);  // Envia o JSON 
   };*/
 
   const theme = createTheme({
@@ -55,91 +68,98 @@ export default function SideBar(props) {
     },
   });
 
-  switch(tipo_documento) {
+  switch (tipo) {
     case 'oficio':
       return (
-
         <ThemeProvider theme={theme}>
           <Box className="side-bar-container">
-            <div className="numero_doc">
+            <div className="numero_doc textFieldContainer">
               <TextField
                 helperText="Número do Ofício"
                 value={numero_oficio}
                 onChange={handleNumChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
-                helperText="Destinátário"
+                helperText="Destinatário"
                 value={destinatario}
                 onChange={handleDestinatarioChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Logradouro do destinatário"
                 value={logradouroDest}
-                onClick={handleTextfieldClick}
                 onChange={handleLogradouroDestChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Cidade e Estado do destinatário"
                 value={cidade}
                 onChange={handleCidEstadoDestChange}
-                onClick={handleTextfieldClick}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="CEP do destinatário"
                 value={cep}
                 onChange={handleCepDestChange}
-                onClick={handleTextfieldClick}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Assunto"
                 value={assunto}
                 onChange={handleAssuntoChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Nome do remetente"
                 value={nomeRemetente}
                 onChange={handleNomeRemetenteChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Cargo do remetente"
                 value={cargoRemetente}
                 onChange={handleCargoRemetenteChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
               />
             </div>
-            <div className="camposInferiores">
+            <div className="camposInferiores textFieldContainer">
               <TextField
                 helperText="Organização do remetente"
                 value={organizacaoRemetente}
                 onChange={handleOrganizacaoRemetenteChange}
                 inputProps={{ className: 'input_text' }}
+                className="textFieldCustom" // Classe personalizada
+                
               />
             </div>
-           
           </Box>
         </ThemeProvider>
       );
+      
+      
     default:
       return null;
   }
