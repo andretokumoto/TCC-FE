@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
+//import { Formik, Form, Field } from 'formik';
 import './sideBar.css';
 
 export default function SideBar(props) {
@@ -30,7 +31,7 @@ export default function SideBar(props) {
     event.target.value = '';
   };
 
-  const handleSaveData = () => {
+ /* const handleSaveData = () => {
     const data = {
       numero_oficio,
       destinatario,
@@ -43,7 +44,7 @@ export default function SideBar(props) {
       organizacaoRemetente,
     };
     props.onDataChange(data);  // Envia o JSON 
-  };
+  };*/
 
   const theme = createTheme({
     palette: {
@@ -57,6 +58,7 @@ export default function SideBar(props) {
   switch(tipo_documento) {
     case 'oficio':
       return (
+
         <ThemeProvider theme={theme}>
           <Box className="side-bar-container">
             <div className="numero_doc">
@@ -134,7 +136,7 @@ export default function SideBar(props) {
                 inputProps={{ className: 'input_text' }}
               />
             </div>
-            <button onClick={handleSaveData}>Salvar Dados</button>  {/* Adiciona botão para enviar dados */}
+           
           </Box>
         </ThemeProvider>
       );
